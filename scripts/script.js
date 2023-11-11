@@ -1,9 +1,19 @@
 // width and height in pixels
 const GridContainerHeight = 800;
 const GridContainerWidth = 800;
+let randomize = false; // randomize the color of the grid
+
 
 let gridContainer = document.querySelector('.grid-container');
 let colorPicker = document.querySelector('input[type="color"]');
+
+function generateColor() {
+    let red = Math.floor(Math.random() * 255);
+    let green = Math.floor(Math.random() * 255);
+    let blue = Math.floor(Math.random() * 255);
+    let color = `rgb(${red} ${green} ${blue})`; 
+    return color;
+}
 
 function createGrid(size)
 {
@@ -17,6 +27,10 @@ function createGrid(size)
             grid.style.width = `${gridWidth}px`;
             grid.style.height = `${gridHeight}px`;
             grid.addEventListener('mouseover', (event) => {
+                if (randomize == true) {
+                    grid.style.backgroundColor = generateColor();
+                    return;
+                }
                 grid.style.backgroundColor = colorPicker.value;
             });
             rowContainer.appendChild(grid);
@@ -30,6 +44,15 @@ window.addEventListener('load', (event) => {
 });
 
 let changeSize = document.querySelector('.change-size');
+let randomColors = document.querySelector('.random');
+
+randomColors.addEventListener('click', () => {
+    randomize = true;
+});
+
+colorPicker.addEventListener('click', () => {
+    randomize = false;
+});
 
 changeSize.addEventListener('click', (event) => {
     let size = parseInt(prompt('Enter the size: '));

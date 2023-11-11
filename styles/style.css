@@ -50,3 +50,17 @@
     width: 100px;
     height: 40px;
 }
+
+.random {
+    position: relative;
+    top: 80px;
+    left: 40px;
+    width: 150px;
+    height: 80px;
+    box-shadow: 0px 4px 20px 0px;
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    font-size: 24px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
