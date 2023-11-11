@@ -1,4 +1,4 @@
 # etch-a-sketch project
-**New Features in Version 1.2**
-+ added the ability to draw random colors
+**New Features in Version 1.3**
++ change the size of the grid using range picker 
 

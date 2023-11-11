@@ -3,7 +3,6 @@ const GridContainerHeight = 800;
 const GridContainerWidth = 800;
 let randomize = false; // randomize the color of the grid
 
-
 let gridContainer = document.querySelector('.grid-container');
 let colorPicker = document.querySelector('input[type="color"]');
 
@@ -39,8 +38,12 @@ function createGrid(size)
     }
 }
 
+let sizeChange = document.querySelector('input[type="range"]');
+let displaySize = document.querySelector('.grid-size span');
+
 window.addEventListener('load', (event) => {
     createGrid(16);
+    displaySize.textContent = "Grid: " + sizeChange.value + " X " + sizeChange.value;
 });
 
 let changeSize = document.querySelector('.change-size');
@@ -54,10 +57,10 @@ colorPicker.addEventListener('click', () => {
     randomize = false;
 });
 
-changeSize.addEventListener('click', (event) => {
-    let size = parseInt(prompt('Enter the size: '));
+sizeChange.addEventListener('click', (event) => {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
-    createGrid(size);
+    createGrid(sizeChange.value);
+    displaySize.textContent = "Grid: " + sizeChange.value + " X " + sizeChange.value;
 });
