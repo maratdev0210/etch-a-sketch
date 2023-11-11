@@ -1,4 +1,4 @@
 # etch-a-sketch project
-**New Features**
-+ added ability to change the size of the grid
-+ the grid cells change their colors whenever the mouse is being hovered over them
+**New Features in Version 1.1**
++ added the ability to pick the color to which the grid would be painted
+

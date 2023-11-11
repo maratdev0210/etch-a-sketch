@@ -3,7 +3,7 @@ const GridContainerHeight = 800;
 const GridContainerWidth = 800;
 
 let gridContainer = document.querySelector('.grid-container');
-
+let colorPicker = document.querySelector('input[type="color"]');
 
 function createGrid(size)
 {
@@ -17,7 +17,7 @@ function createGrid(size)
             grid.style.width = `${gridWidth}px`;
             grid.style.height = `${gridHeight}px`;
             grid.addEventListener('mouseover', (event) => {
-                grid.style.backgroundColor = 'blue';
+                grid.style.backgroundColor = colorPicker.value;
             });
             rowContainer.appendChild(grid);
         }

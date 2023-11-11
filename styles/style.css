@@ -4,6 +4,7 @@
     margin: 0 auto;
     height: 800px;
     width: 800px;
+    margin-top: -100px;
 }
 
 .grid-container div {
@@ -13,4 +14,39 @@
 
 .grid-container div div {
     flex: 1;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.change-size {
+    width: 150px;
+    height: 80px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 20px 0px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    left: 40px;
+}
+
+.color-picker span {
+    font-size: 24px;
+}
+
+.color-picker input {
+    width: 100px;
+    height: 40px;
 }
